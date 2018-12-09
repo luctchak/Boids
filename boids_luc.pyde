@@ -8,16 +8,14 @@ list_of_boids = []
 for type in [BLUE_TYPE, RED_TYPE, GREEN_TYPE]:
     list_of_boids += [
         Boid(
-            x=random(0, 1500),
-            y=random(0, 900),
-            angle=random(0, 2*pi),
+            x=random(0, SIZE_X),
+            y=random(0, SIZE_Y),
+            angle=random(-pi, pi),
             type=type, 
-            inertia=random(0, 10)
+            inertia=5
         )
-        for _ in range(100)
+        for _ in range(20)
     ]
-for b in list_of_boids:
-    b.pregnant = False
     
 env = Environment(list_of_boids)
 
